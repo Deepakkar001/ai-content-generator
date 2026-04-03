@@ -14,16 +14,17 @@ function layout({
     const [UserSubscription,setUserSubscription]=useState<boolean>(false);
   return (
     <UserSubscriptionContext.Provider value={{UserSubscription,setUserSubscription}}>
-      <div className='flex h-screen bg-slate-100'>
-        {/* Sidebar */}
-        <div className='hidden md:block fixed left-0 top-0 h-screen w-64 z-20'>
+      <div className='flex h-screen w-full max-w-[100vw] overflow-hidden bg-slate-100'>
+        {/* Sidebar: in-flow so main column gets correct width (no overlap / horizontal scroll) */}
+        <aside className='hidden md:flex h-full w-64 shrink-0 flex-col z-20'>
           <SideNav/>
-        </div>
+        </aside>
         {/* Main content */}
-        <div className='flex-1 md:ml-64 h-screen overflow-auto'>
+        <div className='flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden'>
           <Header/>
-          {/* Render child routes here */}
-          {children}
+          <div className='min-w-0 flex-1'>
+            {children}
+          </div>
         </div>
       </div>
     </UserSubscriptionContext.Provider>

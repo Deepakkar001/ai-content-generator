@@ -20,10 +20,6 @@ function Header() {
       path: '/dashboard/history'
     },
     {
-      name: 'Billing',
-      path: '/dashboard/billing'
-    },
-    {
       name: 'Settings',
       path: '/dashboard/settings'
     },
@@ -31,11 +27,11 @@ function Header() {
 
   return (
     <>
-      <div className='relative p-4 md:p-5 border-b border-white/10 bg-[#050A1C]/80 backdrop-blur-md z-50'>
+      <div className='relative p-4 md:p-5 border-b border-white/10 bg-[#050A1C]/85 backdrop-blur-xl z-50'>
         {/* Background Gradients */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute left-0 top-0 h-[200px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#0EA5E9] to-[#6366F1] opacity-10 blur-3xl"></div>
-          <div className="absolute right-0 top-0 h-[200px] w-[600px] translate-x-1/3 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] opacity-10 blur-3xl"></div>
+          <div className="absolute left-0 top-0 h-[220px] w-[620px] -translate-x-1/2 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400 opacity-15 blur-3xl"></div>
+          <div className="absolute right-0 top-0 h-[220px] w-[620px] translate-x-1/3 rounded-full bg-gradient-to-r from-amber-400 to-rose-500 opacity-10 blur-3xl"></div>
         </div>
 
         <div className='flex justify-between items-center max-w-7xl mx-auto'>
@@ -47,14 +43,7 @@ function Header() {
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
 
-          <div className='flex gap-5 items-center ml-auto'>
-            <Link 
-              href="/dashboard/billing" 
-              className='bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] p-2 rounded-full text-xs text-white px-4 hover:opacity-90 transition-opacity flex items-center gap-2'
-            >
-              <span className="animate-pulse">🔥</span>
-              Join Membership
-            </Link>
+          <div className='flex gap-4 items-center ml-auto'>
             <div className="relative">
               <UserButton 
                 appearance={{

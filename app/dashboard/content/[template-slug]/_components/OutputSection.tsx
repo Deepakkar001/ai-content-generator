@@ -33,11 +33,11 @@ function OutputSection({ aiOutput }: props) {
   }, [aiOutput]);
 
   return (
-    <div className='bg-white shadow-lg border rounded-lg'>
-      <div className='flex justify-between items-center p-3'>
-        <h2 className='font-medium text-lg'>Your Result</h2>
+    <div className='rounded-2xl border border-white/10 bg-slate-950/80 shadow-xl shadow-black/40 backdrop-blur-2xl overflow-hidden'>
+      <div className='flex justify-between items-center px-4 py-3 border-b border-white/10'>
+        <h2 className='font-semibold text-sm md:text-base text-white'>Your Result</h2>
         <Button 
-          className='flex gap-2 cursor-pointer' 
+          className='flex gap-2 cursor-pointer rounded-full bg-slate-800 hover:bg-slate-700 text-white border border-white/10 px-3 py-1.5 h-auto text-xs md:text-sm' 
           onClick={() => navigator.clipboard.writeText(aiOutput)}
         >
           <Copy className='w-4 h-4' />
@@ -49,7 +49,7 @@ function OutputSection({ aiOutput }: props) {
         initialValue="Your Result will be displayed here"
         initialEditType="wysiwyg"
         previewStyle="vertical"
-        height="600px"
+        height="540px"
         useCommandShortcut={true}
         onChange={() => console.log(editorRef.current?.getInstance().getMarkdown())}
       />

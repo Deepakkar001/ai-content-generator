@@ -9,7 +9,7 @@ function Page() {
   const [userSearchInput, setUserSearchInput] = useState<string>('')
 
   return (
-    <div>
+    <div className="min-w-0">
       {/* {searchsection} */}
       <SearchSection onSearchInput={(value: string) => setUserSearchInput(value)} />
       {/* {templatelistsection} */}
